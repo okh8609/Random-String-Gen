@@ -12,9 +12,12 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            for (int i = 0; i < 2000; i++)
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"output.txt", true))
             {
-                Console.WriteLine(GetRandomStr(4) + " " + GetRandomStr(4));
+                for (int i = 0; i < 2000; i++)
+                {
+                    file.WriteLine(GetRandomStr(4) + " " + GetRandomStr(4));
+                }
             }
         }
 
